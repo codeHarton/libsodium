@@ -1,6 +1,9 @@
 *.vcxproj.user
 *.obj
 
+*.cbp
+*.a
+
 .vs/
 
 x64/
