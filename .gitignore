@@ -11,6 +11,9 @@ Debug/
 Release/
 CMakeFiles/
 
+*.xcworkspace
+xcuserdata
+
 *.bc
 *.cmake
 *.dSYM
@@ -25,7 +28,6 @@ CMakeFiles/
 *.mem
 *.nexe
 *.o
-*.plist
 *.scan
 *.sdf
 *.status
