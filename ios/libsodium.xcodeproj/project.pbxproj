@@ -1632,9 +1632,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		3A3008B4206FED6500ABE7C2 /* libsodium */ = {
+		3A3008B4206FED6500ABE7C2 /* libsodium iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3A3008BD206FED6500ABE7C2 /* Build configuration list for PBXNativeTarget "libsodium" */;
+			buildConfigurationList = 3A3008BD206FED6500ABE7C2 /* Build configuration list for PBXNativeTarget "libsodium iOS" */;
 			buildPhases = (
 				3A3008B0206FED6500ABE7C2 /* Sources */,
 				3A3008B1206FED6500ABE7C2 /* Frameworks */,
@@ -1645,7 +1645,7 @@
 			);
 			dependencies = (
 			);
-			name = libsodium;
+			name = "libsodium iOS";
 			productName = libsodium;
 			productReference = 3A3008B5206FED6500ABE7C2 /* libsodium.framework */;
 			productType = "com.apple.product-type.framework";
@@ -1677,7 +1677,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3A3008B4206FED6500ABE7C2 /* libsodium */,
+				3A3008B4206FED6500ABE7C2 /* libsodium iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -1945,7 +1945,8 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ssrlive.libsodium;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_MODULE_NAME = libsodium;
+				PRODUCT_NAME = libsodium;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1969,7 +1970,8 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ssrlive.libsodium;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_MODULE_NAME = libsodium;
+				PRODUCT_NAME = libsodium;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1987,7 +1989,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3A3008BD206FED6500ABE7C2 /* Build configuration list for PBXNativeTarget "libsodium" */ = {
+		3A3008BD206FED6500ABE7C2 /* Build configuration list for PBXNativeTarget "libsodium iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3A3008BE206FED6500ABE7C2 /* Debug */,
