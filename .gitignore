@@ -1,5 +1,7 @@
 *.vcxproj.user
 *.obj
+*.bak
+*.suo
 
 *.cbp
 *.a
