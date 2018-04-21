@@ -47,7 +47,7 @@ crypto_scalarmult_ed25519(unsigned char *q, const unsigned char *n,
     _crypto_scalarmult_ed25519_clamp(t);
     ge25519_scalarmult(&Q, t, &P);
     ge25519_p3_tobytes(q, &Q);
-    if (_crypto_scalarmult_ed25519_is_inf(q) != 0) {
+    if (_crypto_scalarmult_ed25519_is_inf(q) != 0 || sodium_is_zero(n, 32)) {
         return -1;
     }
     return 0;

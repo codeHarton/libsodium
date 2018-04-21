@@ -51,9 +51,9 @@ blake2b_is_lastblock(const blake2b_state *S)
 static inline int
 blake2b_set_lastblock(blake2b_state *S)
 {
-    if (S->last_node)
+    if (S->last_node) {
         blake2b_set_lastnode(S);
-
+    }
     S->f[0] = -1;
     return 0;
 }
@@ -203,7 +203,7 @@ blake2b_init_key(blake2b_state *S, const uint8_t outlen, const void *key,
     {
         uint8_t block[BLAKE2B_BLOCKBYTES];
         memset(block, 0, BLAKE2B_BLOCKBYTES);
-        memcpy(block, key, keylen);
+        memcpy(block, key, keylen); /* keylen cannot be 0 */
         blake2b_update(S, block, BLAKE2B_BLOCKBYTES);
         sodium_memzero(block, BLAKE2B_BLOCKBYTES); /* Burn the key from stack */
     }
@@ -249,7 +249,7 @@ blake2b_init_key_salt_personal(blake2b_state *S, const uint8_t outlen,
     {
         uint8_t block[BLAKE2B_BLOCKBYTES];
         memset(block, 0, BLAKE2B_BLOCKBYTES);
-        memcpy(block, key, keylen);
+        memcpy(block, key, keylen); /* keylen cannot be 0 */
         blake2b_update(S, block, BLAKE2B_BLOCKBYTES);
         sodium_memzero(block, BLAKE2B_BLOCKBYTES); /* Burn the key from stack */
     }
@@ -320,7 +320,7 @@ blake2b_final(blake2b_state *S, uint8_t *out, uint8_t outlen)
     STORE64_LE(buffer + 8 * 5, S->h[5]);
     STORE64_LE(buffer + 8 * 6, S->h[6]);
     STORE64_LE(buffer + 8 * 7, S->h[7]);
-    memcpy(out, buffer, outlen);
+    memcpy(out, buffer, outlen); /* outlen <= BLAKE2B_OUTBYTES (64) */
 
     sodium_memzero(S->h, sizeof S->h);
     sodium_memzero(S->buf, sizeof S->buf);
@@ -333,7 +333,7 @@ int
 blake2b(uint8_t *out, const void *in, const void *key, const uint8_t outlen,
         const uint64_t inlen, uint8_t keylen)
 {
-    blake2b_state S[1];
+    CRYPTO_ALIGN(64) blake2b_state S[1];
 
     /* Verify parameters */
     if (NULL == in && inlen > 0) {
@@ -371,7 +371,7 @@ blake2b_salt_personal(uint8_t *out, const void *in, const void *key,
                       const uint8_t outlen, const uint64_t inlen,
                       uint8_t keylen, const void *salt, const void *personal)
 {
-    blake2b_state S[1];
+    CRYPTO_ALIGN(64) blake2b_state S[1];
 
     /* Verify parameters */
     if (NULL == in && inlen > 0) {
