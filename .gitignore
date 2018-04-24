@@ -1,3 +1,9 @@
+CMakeFiles/
+*.a
+*.cbp
+*.xcworkspace
+
+
 *.bc
 *.cmake
 *.dSYM
