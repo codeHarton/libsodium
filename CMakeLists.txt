@@ -1,5 +1,5 @@
-cmake_minimum_required(VERSION 2.8.4)
-project(libsodium_Cmake C CXX ASM)
+cmake_minimum_required(VERSION 3.0)
+project(libsodium_Cmake)
 
 #TODO?: Add mmx, SSE2, SSE3, SSSE3 checks.
 #TODO?: More of the emscripten stuff.
