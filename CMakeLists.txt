@@ -324,8 +324,6 @@ SET(libsodium_HEADERS ${libsodium_HEADERS}
         ${libsodium_root_dir}/src/libsodium/crypto_scalarmult/curve25519/sandy2x/fe51.h
         ${libsodium_root_dir}/src/libsodium/crypto_scalarmult/curve25519/sandy2x/fe51_namespace.h
         ${libsodium_root_dir}/src/libsodium/crypto_scalarmult/curve25519/sandy2x/ladder.h
-        ${libsodium_root_dir}/src/libsodium/crypto_scalarmult/curve25519/sandy2x/ladder_base.h
-        ${libsodium_root_dir}/src/libsodium/crypto_scalarmult/curve25519/sandy2x/ladder_base_namespace.h
         ${libsodium_root_dir}/src/libsodium/crypto_scalarmult/curve25519/sandy2x/ladder_namespace.h
         ${libsodium_root_dir}/src/libsodium/crypto_scalarmult/curve25519/scalarmult_curve25519.h
         ${libsodium_root_dir}/src/libsodium/crypto_shorthash/siphash24/ref/shorthash_siphash_ref.h
@@ -389,7 +387,6 @@ SET(libsodium_HEADERS ${libsodium_HEADERS}
         ${libsodium_root_dir}/src/libsodium/include/sodium/crypto_shorthash_siphash24.h
         ${libsodium_root_dir}/src/libsodium/include/sodium/crypto_sign.h
         ${libsodium_root_dir}/src/libsodium/include/sodium/crypto_sign_ed25519.h
-        ${libsodium_root_dir}/src/libsodium/include/sodium/crypto_sign_edwards25519sha512batch.h
         ${libsodium_root_dir}/src/libsodium/include/sodium/crypto_stream.h
         ${libsodium_root_dir}/src/libsodium/include/sodium/crypto_stream_chacha20.h
         ${libsodium_root_dir}/src/libsodium/include/sodium/crypto_stream_salsa20.h
@@ -409,8 +406,6 @@ SET(libsodium_HEADERS ${libsodium_HEADERS}
         ${libsodium_root_dir}/src/libsodium/include/sodium/private/mutex.h
         ${libsodium_root_dir}/src/libsodium/include/sodium/private/sse2_64_32.h
         ${libsodium_root_dir}/src/libsodium/include/sodium/randombytes.h
-        ${libsodium_root_dir}/src/libsodium/include/sodium/randombytes_nativeclient.h
-        ${libsodium_root_dir}/src/libsodium/include/sodium/randombytes_salsa20_random.h
         ${libsodium_root_dir}/src/libsodium/include/sodium/randombytes_sysrandom.h
         ${libsodium_root_dir}/src/libsodium/include/sodium/runtime.h
         ${libsodium_root_dir}/src/libsodium/include/sodium/utils.h
@@ -495,7 +490,6 @@ SET(libsodium_SOURCE ${libsodium_SOURCE}
         ${libsodium_root_dir}/src/libsodium/crypto_shorthash/siphash24/shorthash_siphashx24.c
         ${libsodium_root_dir}/src/libsodium/crypto_sign/crypto_sign.c
         ${libsodium_root_dir}/src/libsodium/crypto_sign/ed25519/ref10/keypair.c
-        ${libsodium_root_dir}/src/libsodium/crypto_sign/ed25519/ref10/obsolete.c
         ${libsodium_root_dir}/src/libsodium/crypto_sign/ed25519/ref10/open.c
         ${libsodium_root_dir}/src/libsodium/crypto_sign/ed25519/ref10/sign.c
         ${libsodium_root_dir}/src/libsodium/crypto_sign/ed25519/sign_ed25519.c
@@ -516,9 +510,7 @@ SET(libsodium_SOURCE ${libsodium_SOURCE}
         ${libsodium_root_dir}/src/libsodium/crypto_stream/xchacha20/stream_xchacha20.c
         ${libsodium_root_dir}/src/libsodium/crypto_stream/xsalsa20/stream_xsalsa20.c
         ${libsodium_root_dir}/src/libsodium/crypto_verify/sodium/verify.c
-        ${libsodium_root_dir}/src/libsodium/randombytes/nativeclient/randombytes_nativeclient.c
         ${libsodium_root_dir}/src/libsodium/randombytes/randombytes.c
-        ${libsodium_root_dir}/src/libsodium/randombytes/salsa20/randombytes_salsa20_random.c
         ${libsodium_root_dir}/src/libsodium/randombytes/sysrandom/randombytes_sysrandom.c
         ${libsodium_root_dir}/src/libsodium/sodium/codecs.c
         ${libsodium_root_dir}/src/libsodium/sodium/core.c
