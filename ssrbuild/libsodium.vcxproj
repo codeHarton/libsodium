@@ -22,7 +22,6 @@
     <ProjectGuid>{A185B162-6CB6-4502-B03F-B56F7699A8D9}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>libsodium</RootNamespace>
-    <WindowsTargetPlatformVersion>5.2</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -158,7 +157,6 @@
     <ClCompile Include="..\src\libsodium\crypto_kx\crypto_kx.c" />
     <ClCompile Include="..\src\libsodium\crypto_sign\crypto_sign.c" />
     <ClCompile Include="..\src\libsodium\crypto_sign\ed25519\sign_ed25519.c" />
-    <ClCompile Include="..\src\libsodium\crypto_sign\ed25519\ref10\obsolete.c" />
     <ClCompile Include="..\src\libsodium\crypto_sign\ed25519\ref10\sign.c" />
     <ClCompile Include="..\src\libsodium\crypto_sign\ed25519\ref10\keypair.c" />
     <ClCompile Include="..\src\libsodium\crypto_sign\ed25519\ref10\open.c" />
@@ -208,8 +206,6 @@
     <ClCompile Include="..\src\libsodium\crypto_onetimeauth\poly1305\sse2\poly1305_sse2.c" />
     <ClCompile Include="..\src\libsodium\randombytes\randombytes.c" />
     <ClCompile Include="..\src\libsodium\randombytes\sysrandom\randombytes_sysrandom.c" />
-    <ClCompile Include="..\src\libsodium\randombytes\salsa20\randombytes_salsa20_random.c" />
-    <ClCompile Include="..\src\libsodium\randombytes\nativeclient\randombytes_nativeclient.c" />
     <ClCompile Include="..\src\libsodium\crypto_box\crypto_box_easy.c" />
     <ClCompile Include="..\src\libsodium\crypto_box\crypto_box_seal.c" />
     <ClCompile Include="..\src\libsodium\crypto_box\crypto_box.c" />
@@ -270,7 +266,6 @@
     <ClInclude Include="..\src\libsodium\include\sodium\crypto_hash_sha512.h" />
     <ClInclude Include="..\src\libsodium\include\sodium\core.h" />
     <ClInclude Include="..\src\libsodium\include\sodium\export.h" />
-    <ClInclude Include="..\src\libsodium\include\sodium\randombytes_salsa20_random.h" />
     <ClInclude Include="..\src\libsodium\include\sodium\crypto_core_salsa20.h" />
     <ClInclude Include="..\src\libsodium\include\sodium\crypto_shorthash_siphash24.h" />
     <ClInclude Include="..\src\libsodium\include\sodium\randombytes.h" />
@@ -297,7 +292,6 @@
     <ClInclude Include="..\src\libsodium\include\sodium\crypto_aead_aes256gcm.h" />
     <ClInclude Include="..\src\libsodium\include\sodium\crypto_core_salsa2012.h" />
     <ClInclude Include="..\src\libsodium\include\sodium\crypto_secretbox_xchacha20poly1305.h" />
-    <ClInclude Include="..\src\libsodium\include\sodium\randombytes_nativeclient.h" />
     <ClInclude Include="..\src\libsodium\include\sodium\crypto_scalarmult.h" />
     <ClInclude Include="..\src\libsodium\include\sodium\crypto_pwhash.h" />
     <ClInclude Include="..\src\libsodium\include\sodium\crypto_verify_16.h" />
@@ -322,7 +316,6 @@
     <ClInclude Include="..\src\libsodium\include\sodium\crypto_scalarmult_ed25519.h" />
     <ClInclude Include="..\src\libsodium\include\sodium\crypto_box_curve25519xsalsa20poly1305.h" />
     <ClInclude Include="..\src\libsodium\include\sodium\crypto_generichash_blake2b.h" />
-    <ClInclude Include="..\src\libsodium\include\sodium\crypto_sign_edwards25519sha512batch.h" />
     <ClInclude Include="..\src\libsodium\include\sodium\private\ed25519_ref10.h" />
     <ClInclude Include="..\src\libsodium\include\sodium\private\ed25519_ref10_fe_25_5.h" />
     <ClInclude Include="..\src\libsodium\include\sodium\private\ed25519_ref10_fe_51.h" />
@@ -345,12 +338,10 @@
     <ClInclude Include="..\src\libsodium\crypto_scalarmult\curve25519\sandy2x\consts_namespace.h" />
     <ClInclude Include="..\src\libsodium\crypto_scalarmult\curve25519\sandy2x\ladder_namespace.h" />
     <ClInclude Include="..\src\libsodium\crypto_scalarmult\curve25519\sandy2x\fe.h" />
-    <ClInclude Include="..\src\libsodium\crypto_scalarmult\curve25519\sandy2x\ladder_base_namespace.h" />
     <ClInclude Include="..\src\libsodium\crypto_scalarmult\curve25519\sandy2x\ladder.h" />
     <ClInclude Include="..\src\libsodium\crypto_scalarmult\curve25519\sandy2x\fe51.h" />
     <ClInclude Include="..\src\libsodium\crypto_scalarmult\curve25519\sandy2x\curve25519_sandy2x.h" />
     <ClInclude Include="..\src\libsodium\crypto_scalarmult\curve25519\sandy2x\fe51_namespace.h" />
-    <ClInclude Include="..\src\libsodium\crypto_scalarmult\curve25519\sandy2x\ladder_base.h" />
     <ClInclude Include="..\src\libsodium\crypto_scalarmult\curve25519\ref10\x25519_ref10.h" />
     <ClInclude Include="..\src\libsodium\crypto_onetimeauth\poly1305\onetimeauth_poly1305.h" />
     <ClInclude Include="..\src\libsodium\crypto_onetimeauth\poly1305\donna\poly1305_donna.h" />
